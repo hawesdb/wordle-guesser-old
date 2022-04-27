@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
+import { initializeFirebase } from './firebase';
 
 import App from './app/app';
 

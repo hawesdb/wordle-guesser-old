@@ -1,0 +1,32 @@
+{
+  "root": "libs/words",
+  "sourceRoot": "libs/words/src",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/words",
+        "main": "libs/words/src/index.ts",
+        "tsConfig": "libs/words/tsconfig.lib.json",
+        "assets": ["libs/words/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/words/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/words"],
+      "options": {
+        "jestConfig": "libs/words/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
